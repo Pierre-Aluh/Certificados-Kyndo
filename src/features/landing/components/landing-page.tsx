@@ -21,7 +21,7 @@ export function LandingPage() {
     legalName: brand.legalName,
     taxID: brand.cnpj,
     telephone: brand.phone,
-    url: "https://certificadoskyndo.com.br",
+    url: "https://certikyndo.com.br",
     address: {
       "@type": "PostalAddress",
       streetAddress: `${brand.address.street}, ${brand.address.number}, ${brand.address.complement}`,

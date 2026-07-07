@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://certificadoskyndo.com.br/sitemap.xml",
-    host: "https://certificadoskyndo.com.br",
+    sitemap: "https://certikyndo.com.br/sitemap.xml",
+    host: "https://certikyndo.com.br",
   };
 }

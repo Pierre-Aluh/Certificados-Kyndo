@@ -1,4 +1,4 @@
-# Certificados Kyndo
+# Certikyndo
 
 Landing page institucional desenvolvida com foco em performance, SEO e evolução para arquitetura de produto SaaS.
 

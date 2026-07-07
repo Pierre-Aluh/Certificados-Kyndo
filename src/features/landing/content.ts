@@ -1,6 +1,6 @@
 export const landingContent = {
   brand: {
-    name: "Certificados Kyndo",
+    name: "Certikyndo",
     slogan: "Certificação digital com confiança, velocidade e suporte humano.",
     whatsapp: "+55 62 9477-8197",
     phone: "+55 62 9338-4009",
@@ -142,7 +142,7 @@ export const landingContent = {
     cta: {
       label: "Iniciar atendimento",
       href:
-        "https://wa.me/556294778197?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Certificados%20Kyndo%20e%20quero%20emitir%20ou%20renovar%20meu%20certificado%20digital.%20Podem%20me%20ajudar%3F",
+        "https://wa.me/556294778197?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Certikyndo%20e%20quero%20emitir%20ou%20renovar%20meu%20certificado%20digital.%20Podem%20me%20ajudar%3F",
     },
   },
 };

@@ -1,7 +1,7 @@
 # 00-MASTER_AGENT_GUIDE.md
 
 > Fonte única de verdade (Single Source of Truth) do projeto
-> **Certificados Kyndo**.
+> **Certikyndo**.
 >
 > Este documento governa todas as decisões do GitHub Copilot Agent
 > durante todo o ciclo de vida do projeto.
@@ -51,7 +51,7 @@ Sempre consulte somente os documentos relevantes para a tarefa atual.
 
 # OBJETIVO
 
-Construir inicialmente uma Landing Page para **Certificados Kyndo**,
+Construir inicialmente uma Landing Page para **Certikyndo**,
 preparada desde o início para evoluir para uma plataforma SaaS.
 
 Escopo futuro previsto:
