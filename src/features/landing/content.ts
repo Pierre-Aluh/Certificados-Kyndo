@@ -2,8 +2,21 @@ export const landingContent = {
   brand: {
     name: "Certificados Kyndo",
     slogan: "Certificação digital com confiança, velocidade e suporte humano.",
-    email: "contato@certificadoskyndo.com.br",
+    email: "admin@caneki.com.br",
     whatsapp: "+55 62 9477-8197",
+    phone: "+55 62 9338-4009",
+    cnpj: "65.579.670/0001-50",
+    legalName: "65.579.670 PIERRE ANDERSON DOS SANTOS",
+    address: {
+      street: "Rua C23",
+      number: "01",
+      complement: "Quadra 67, Lote 20",
+      district: "Setor Novo Horizonte",
+      city: "Goiânia",
+      state: "GO",
+      zipCode: "74363-290",
+      country: "BR",
+    },
   },
   navigation: [
     { label: "Planos", href: "#planos" },
@@ -18,6 +31,28 @@ export const landingContent = {
     rightsReserved: "Todos os direitos reservados.",
     stepPrefix: "Etapa",
     requestPlan: "Solicitar",
+  },
+  seo: {
+    primaryKeyword: "certificado digital em Goiânia",
+    secondaryKeywords: [
+      "certificado digital goiania go",
+      "e-cpf goiânia",
+      "e-cnpj goiânia",
+      "certificado digital soluti",
+      "renovação de certificado digital",
+      "certificado digital para empresas",
+      "certificado digital para contador",
+    ],
+  },
+  serviceCoverage: {
+    title: "Atendimento em Goiânia-GO e em todo o Brasil",
+    description:
+      "Nossa base operacional está em Goiânia, com suporte remoto para clientes de todos os estados, garantindo emissão e renovação com agilidade em âmbito nacional.",
+    regions: [
+      "Goiânia e região metropolitana",
+      "Estado de Goiás",
+      "Atendimento nacional para pessoa física e jurídica",
+    ],
   },
   hero: {
     eyebrow: "Autoridade de Registro Parceira",

@@ -1,8 +1,50 @@
 import { landingContent } from "@/features/landing/content";
 
 export function LandingPage() {
-  const { brand, navigation, labels, hero, stats, plans, process, faq, contact } =
-    landingContent;
+  const {
+    brand,
+    navigation,
+    labels,
+    serviceCoverage,
+    hero,
+    stats,
+    plans,
+    process,
+    faq,
+    contact,
+  } = landingContent;
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: brand.name,
+    legalName: brand.legalName,
+    taxID: brand.cnpj,
+    email: brand.email,
+    telephone: brand.phone,
+    url: "https://certificadoskyndo.com.br",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${brand.address.street}, ${brand.address.number}, ${brand.address.complement}`,
+      addressLocality: brand.address.city,
+      addressRegion: brand.address.state,
+      postalCode: brand.address.zipCode,
+      addressCountry: brand.address.country,
+    },
+    areaServed: ["Goiânia", "Goiás", "Brasil"],
+    makesOffer: plans.items.map((plan) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: plan.name,
+      },
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "BRL",
+        price: plan.price,
+      },
+    })),
+  };
 
   return (
     <div className="relative overflow-hidden bg-[var(--ck-bg)] text-[var(--ck-ink)]">
@@ -141,6 +183,22 @@ export function LandingPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-6xl px-6 py-6 lg:px-8">
+          <div className="rounded-3xl border border-black/10 bg-white/85 p-6 md:p-8">
+            <h2 className="text-2xl font-black tracking-tight md:text-3xl">{serviceCoverage.title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-black/70 md:text-base">
+              {serviceCoverage.description}
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm text-black/80 md:grid-cols-3">
+              {serviceCoverage.regions.map((region) => (
+                <li key={region} className="rounded-xl border border-black/10 bg-[#fffdfa] px-3 py-2">
+                  {region}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <section id="contato" className="mx-auto max-w-6xl px-6 pb-24 pt-10 lg:px-8">
           <div className="rounded-3xl bg-[var(--ck-ink)] px-6 py-10 text-white md:px-10 md:py-12">
             <h2 className="text-3xl font-black tracking-tight md:text-4xl">{contact.title}</h2>
@@ -157,15 +215,72 @@ export function LandingPage() {
               <div className="text-sm text-white/85">
                 <p>{brand.email}</p>
                 <p>{brand.whatsapp}</p>
+                <p>{brand.phone}</p>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-black/10 px-6 py-8 text-center text-xs text-black/60 lg:px-8">
-        {new Date().getFullYear()} {brand.name}. {labels.rightsReserved}
+      <footer className="border-t border-black/10 bg-[#f3efe6] px-6 py-10 text-black/70 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+          <div>
+            <p className="text-sm font-bold text-black">{brand.name}</p>
+            <p className="mt-1 text-xs">{brand.legalName}</p>
+            <p className="text-xs">CNPJ: {brand.cnpj}</p>
+          </div>
+          <div>
+            <p className="text-sm font-bold text-black">Endereço</p>
+            <p className="mt-1 text-xs">
+              {brand.address.street}, {brand.address.number} - {brand.address.complement}
+            </p>
+            <p className="text-xs">
+              {brand.address.district}, {brand.address.city} - {brand.address.state}, CEP {brand.address.zipCode}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-bold text-black">Contato</p>
+            <p className="mt-1 text-xs">
+              E-mail: <a href={`mailto:${brand.email}`}>{brand.email}</a>
+            </p>
+            <p className="text-xs">
+              Telefone: <a href="tel:+556293384009">{brand.phone}</a>
+            </p>
+            <p className="text-xs">
+              WhatsApp: <a href={contact.cta.href}> {brand.whatsapp}</a>
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto mt-6 max-w-6xl border-t border-black/10 pt-4 text-xs">
+          <div className="mb-2 flex flex-wrap gap-4">
+            <a href="#faq" className="hover:underline">
+              FAQ
+            </a>
+            <a href="#contato" className="hover:underline">
+              Contato
+            </a>
+            <a href={contact.cta.href} className="hover:underline">
+              WhatsApp
+            </a>
+            <a
+              href="https://maps.google.com/?q=Rua+C23,+1,+Setor+Novo+Horizonte,+Goiania+-+GO,+74363-290"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Ver no mapa
+            </a>
+          </div>
+          <p>
+            {new Date().getFullYear()} {brand.name}. {labels.rightsReserved}
+          </p>
+        </div>
       </footer>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </div>
   );
 }
