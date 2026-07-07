@@ -20,7 +20,6 @@ export function LandingPage() {
     name: brand.name,
     legalName: brand.legalName,
     taxID: brand.cnpj,
-    email: brand.email,
     telephone: brand.phone,
     url: "https://certificadoskyndo.com.br",
     address: {
@@ -213,7 +212,6 @@ export function LandingPage() {
                 {contact.cta.label}
               </a>
               <div className="text-sm text-white/85">
-                <p>{brand.email}</p>
                 <p>{brand.whatsapp}</p>
                 <p>{brand.phone}</p>
               </div>
@@ -240,9 +238,7 @@ export function LandingPage() {
           </div>
           <div>
             <p className="text-sm font-bold text-black">Contato</p>
-            <p className="mt-1 text-xs">
-              E-mail: <a href={`mailto:${brand.email}`}>{brand.email}</a>
-            </p>
+            <p className="mt-1 text-xs">Atendimento digital via WhatsApp e telefone</p>
             <p className="text-xs">
               Telefone: <a href="tel:+556293384009">{brand.phone}</a>
             </p>

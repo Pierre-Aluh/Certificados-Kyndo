@@ -2,7 +2,6 @@ export const landingContent = {
   brand: {
     name: "Certificados Kyndo",
     slogan: "Certificação digital com confiança, velocidade e suporte humano.",
-    email: "admin@caneki.com.br",
     whatsapp: "+55 62 9477-8197",
     phone: "+55 62 9338-4009",
     cnpj: "65.579.670/0001-50",
@@ -10,7 +9,7 @@ export const landingContent = {
     address: {
       street: "Rua C23",
       number: "01",
-      complement: "Quadra 67, Lote 20",
+      complement: "Quadra 67",
       district: "Setor Novo Horizonte",
       city: "Goiânia",
       state: "GO",
